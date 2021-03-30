@@ -24,7 +24,6 @@ import keymap from './keymap'
 import loadAllDiffs from './load-all-diffs'
 import occurrencesHighlighter from './occurrences-highlighter'
 import pullrequestCommitAmount from './pullrequest-commit-amount'
-import insertPullrequestTemplate from './pullrequest-template'
 import insertShowComments from './show-comments'
 import addSidebarCounters from './sidebar-counters'
 import { syntaxHighlightOldUI, syntaxHighlightNewUI } from './syntax-highlight'
@@ -89,10 +88,6 @@ function init(config) {
     } else if (isPullRequestList() || isDashBoardOverview()) {
         pullrequestListRelatedFeatures(config)
     } else if (isCreatePullRequestURL()) {
-        if (config.prTemplateEnabled) {
-            insertPullrequestTemplate(config.prTemplateUrl)
-        }
-
         if (config.closeAnchorBranch) {
             closeAnchorBranch()
         }
